@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 # Inherit from vince device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -29,7 +29,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := vince
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := lineage_vince
+PRODUCT_NAME := mk_vince
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -42,3 +42,6 @@ BUILD_FINGERPRINT := xiaomi/vince/vince:7.1.2/N2G47H/V9.2.3.0.NEGCNEK:user/relea
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mk.maintainer=IsaacChen
